@@ -31,3 +31,43 @@ print(np.concatenate((array_lnp, array_of_dtype)))
 y = np.array([[1, 2], [3, 4]])
 x = np.array([[5, 3]])
 print(np.concatenate((y, x)))
+b = np.array([[1, 2, 3], [3, 5, 3]])
+a = np.reshape(b, (3, 2))
+print(a)
+# convert 1D array to 2D array
+
+# create new array
+t = np.array([1, 2, 3, 4, 5, 6])
+# ADD row
+t2 = t[np.newaxis, :]
+print(np.shape(t2))
+print(t2)
+print("-------------")
+t2b = np.reshape(t2, (2, 3))
+print(t2b)
+# ADD column
+t2 = t[:, np.newaxis]
+print(t2)
+
+# inserting a new axis at a specified position
+y = np.array([1, 2, 3, 4, 5, 6])
+y2 = np.expand_dims(y, axis=0)
+print(np.shape(y2))
+# slicing and indexing
+o = np.array([[1, 2, 3, 4, 6, 4],
+              [3, 4, 1, 4, 5, 4]])
+print(o[1:2])
+print("------------------------")
+print(o[1, 2])
+print("------------------------")
+print(o[-4:])
+three_up = (o >= 3)
+print("------------------------")
+print(o[three_up])
+print("------------------------")
+# mask
+divisible_by_2 = o[o % 2 == 0]
+print(divisible_by_2)
+print("------------------")
+mask_tf = (o > 2) | (o <= 5)
+print(mask_tf)
