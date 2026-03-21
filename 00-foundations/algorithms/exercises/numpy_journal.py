@@ -43,7 +43,8 @@ def basics_section():
     print()
     show_array("array_a", array_a)
     print(f"size={array_a.size}")
-    print(f"I see that size == product of shape -> {array_a.size == math.prod(array_a.shape)}")
+    print(
+        f"I see that size == product of shape -> {array_a.size == math.prod(array_a.shape)}")
 
 
 # NumPy topic:
@@ -58,7 +59,8 @@ def copy_section():
     show_array("original", original)
     print()
     show_array("copied", copied)
-    print(f"I can change the copy without changing the original -> {original[0, 0] == 1}")
+    print(
+        f"I can change the copy without changing the original -> {original[0, 0] == 1}")
 
 
 # NumPy topics:
@@ -83,7 +85,8 @@ def creation_section():
     print()
     show_array("np.sort(...)", np.sort(unsorted_array, kind="quicksort"))
     print()
-    show_array("concat(line_array, ones_array)", np.concatenate((line_array, ones_array)))
+    show_array("concat(line_array, ones_array)",
+               np.concatenate((line_array, ones_array)))
 
 
 # NumPy topics:
@@ -108,7 +111,8 @@ def reshape_section():
     show_array("concatenate(y, x)", concatenated)
     print()
     show_array("reshape(b, (3, 2))", reshaped_b)
-    print(f"I see that reshape keeps the same total number of elements -> {array_b.size == reshaped_b.size}")
+    print(
+        f"I see that reshape keeps the same total number of elements -> {array_b.size == reshaped_b.size}")
 
     print()
     show_array("1D -> row with newaxis", row_version)
@@ -186,7 +190,8 @@ def operations_section():
     array_h = rng.uniform(0, 0.70, size=(3, 4))
     array_d2 = np.array([[1, 3], [4, 9], [2, 8]])
     random_matrix = rng.integers(1, 10, size=(3, 2), endpoint=True)
-    array_l = np.array([11, 11, 12, 13, 14, 15, 16, 17, 12, 13, 11, 14, 18, 19, 20])
+    array_l = np.array([11, 11, 12, 13, 14, 15, 16,
+                       17, 12, 13, 11, 14, 18, 19, 20])
     array_24 = rng.integers(1, 100, size=24)
     matrix_4col = array_24.reshape(6, 4)
 
@@ -219,6 +224,36 @@ def operations_section():
     print(np.flip(matrix_4col, axis=1))
 
 
+def flattening_arrays_section():
+    section("8. Reshaping and flattening multidimensional arrays")
+
+    print()
+    array_a = np.arange(0, 15).reshape(3, 5)
+    show_array("Original array", array_a)
+    array_flatten = array_a.flatten()
+    array_flatten[0] = 100
+    print()
+    print(f"Flattened with \"flatten\" ->\n{array_flatten}")
+    print()
+    show_array("Original array", array_a)
+    print()
+    print("I can see that \"flatten\" does not change the original array.")
+
+    print()
+    array_c = np.arange(0, 15).reshape(3, 5)
+
+    show_array("Original array", array_c)
+    array_ravel = array_c.ravel()
+    array_ravel[0] = 100
+
+    print()
+    print(f"Flattened with \"ravel\" ->\n{array_ravel}")
+    print()
+    show_array("Original array", array_c)
+    print()
+    print("In this example, I can see that \"ravel\" changes the original array.")
+
+
 def main():
     page_title("My NumPy Journal")
     basics_section()
@@ -228,6 +263,7 @@ def main():
     indexing_section()
     stack_split_section()
     operations_section()
+    flattening_arrays_section()
 
 
 if __name__ == "__main__":
