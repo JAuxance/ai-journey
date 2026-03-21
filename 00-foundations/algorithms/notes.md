@@ -1,9 +1,12 @@
-## My Current Learning Context
+# Algorithms Notes
 
-I am learning by experimenting first and organizing my code after.
-Right now, this works well for me because I can explore freely, make mistakes, compare results, and then turn that into something clearer.
+## Where I Am Right Now
 
-At this stage, I have mainly worked on NumPy basics:
+Right now I am learning by testing things first and organizing them after.
+This feels natural to me because I can move fast, follow my curiosity, make mistakes, compare outputs, and only clean everything up once I start understanding the logic better.
+
+At this point, most of what I have done is around NumPy basics and first manipulations.
+I have already spent time on:
 - creating arrays
 - reading `shape`, `ndim`, `size`, and `dtype`
 - copying arrays
@@ -14,59 +17,63 @@ At this stage, I have mainly worked on NumPy basics:
 - stacking and splitting arrays
 - transposing arrays
 - getting unique values
-- doing simple array operations
+- doing simple operations on arrays and matrices
 
-## What I Practiced
+## What I Actually Tried
 
-I practiced creating arrays with:
+I tested several ways to create arrays:
 - `np.array()`
 - `np.arange()`
 - `np.linspace()`
 - `np.ones()`
 - `np.empty()`
 
-I also practiced:
+Then I started exploring transformations and operations:
 - sorting with `np.sort()`
 - concatenating with `np.concatenate()`
 - reshaping with `np.reshape()`
 - adding axes with `np.newaxis` and `np.expand_dims()`
 - selecting values with indexing, slicing, and masks
-- using `np.vstack()`, `np.hstack()`, and `np.hsplit()`
-- summing rows and columns with `sum(axis=...)`
+- stacking with `np.vstack()` and `np.hstack()`
+- splitting with `np.hsplit()`
+- summing with `sum(axis=...)`
 - transposing with `.T`
 - getting unique values with `np.unique()`
-- reversing part of a matrix with `np.flip()`
+- flipping part of a matrix with `np.flip()`
 
-## What I Understand Better Now
+## What Is Becoming Clear
 
-I understand better that:
+Some ideas are starting to feel more solid now.
+
+I am seeing more clearly that:
 - `shape` describes the structure of the array
-- `ndim` tells me how many dimensions the array has
+- `ndim` tells me how many dimensions I am working with
 - `size` gives the total number of elements
 - `len(shape) == ndim`
 - `size == product(shape)`
-- a real copy is independent from the original array
-- `reshape()` changes the form of the array but not the total number of elements
+- a true copy is independent from the original array
+- `reshape()` changes the form, not the total number of elements
 - `np.newaxis` and `expand_dims()` help me turn a 1D array into a row or a column
-- masks let me filter values based on a condition
-- `axis=0` and `axis=1` do not mean the same thing, especially for sums and matrix operations
+- masks are a clean way to filter values with conditions
+- `axis=0` and `axis=1` really matter and change how NumPy reads an operation
 
-## What Still Feels In Progress
+## What Still Feels Unfinished
 
-I am not trying to pretend I fully know everything yet.
-Some ideas still feel in progress and I want to keep practicing them:
-- the difference between a copy and a view
-- when a slice changes the original array
-- how `axis` really behaves in more situations
-- transposing and reshaping matrices without confusion
-- getting unique items with counts, not just unique values
+I do not want these notes to pretend I already master everything.
+Some parts still feel unfinished and I want to revisit them calmly:
+- when slicing returns something linked to the original array
+- how `axis` behaves in more cases
+- transposing and reshaping matrices without hesitation
+- getting unique items with counts, not only unique values
 
-## My Working Method
+## How I Learn Best For Now
 
-For now, my method is:
+For now, my best method looks like this:
 1. I test ideas quickly in code.
-2. I let myself write things in one flow.
-3. I reorganize the result after.
-4. I keep a cleaner version as a learning trace.
+2. I let myself write in one flow.
+3. I look at the output and compare what changes.
+4. I reorganize the result after.
+5. I keep a cleaner version as a trace of what I really understood.
 
-This feels more natural for me than trying to write everything clean from the start.
+This is not the cleanest method at the beginning, but for me it is one of the most honest ones.
+It helps me see my real thinking before I polish it.
