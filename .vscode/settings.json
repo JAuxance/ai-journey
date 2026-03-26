@@ -4,5 +4,32 @@
   "terminal.integrated.fontFamily": "'SF Mono', 'Menlo', 'Monaco', 'Cascadia Mono', 'Consolas', 'Liberation Mono', 'Courier New', monospace",
   "scm.inputFontFamily": "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', 'Segoe UI', sans-serif",
   "debug.console.fontFamily": "'SF Mono', 'Menlo', 'Monaco', 'Cascadia Mono', 'Consolas', 'Liberation Mono', 'Courier New', monospace",
-  "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', 'Segoe UI', sans-serif"
+  "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', 'Segoe UI', sans-serif",
+  "cSpell.enabled": true,
+  "cSpell.language": "fr,en",
+  "cSpell.enabledLanguageIds": [
+    "markdown",
+    "plaintext",
+    "python",
+    "json",
+    "yaml",
+    "yml",
+    "toml",
+    "shellscript",
+    "git-commit"
+  ],
+  "cSpell.words": [
+    "arange",
+    "dtype",
+    "hsplit",
+    "hstack",
+    "int64",
+    "ndim",
+    "newaxis",
+    "numpy",
+    "NumPy",
+    "ravel",
+    "reshape",
+    "vstack"
+  ]
 }
