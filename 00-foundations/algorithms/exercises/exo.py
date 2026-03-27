@@ -23,10 +23,10 @@ def array_copy():
 
 def diff_array():
     range_array = np.arange(15)
-    linspace_array = np.linspace(0, 1, num=5)
-    array_of_ones = np.ones(2, 3, dtype=np.int64)
+    minispace_array = np.linspace(0, 1, num=5)
+    array_of_ones = np.ones((2, 3), dtype=np.int64)
     empty_array = np.empty(4)
-    print(f"{range_array}\n{linspace_array}\n{array_of_ones}\n{empty_array}")
+    print(f"{range_array}\n{minispace_array}\n{array_of_ones}\n{empty_array}")
 # Exo 4
 
 
@@ -71,7 +71,6 @@ def index_slicing():
     print(c[:, 1])
 
 
-index_slicing()
 # Exo 8
 
 
@@ -96,5 +95,16 @@ def matrices():
     print(np.shape(m1_vstack))
     print(np.shape(m1_hstack))
 
+def main():
+    array_stats()
+    array_copy()
+    diff_array()
+    sort_and_add()
+    Reshape()
+    line_col_axis()
+    index_slicing()
+    mask()
+    matrices()
 
-matrices()
+if __name__ == "__main__":
+    main()
