@@ -253,6 +253,17 @@ def flattening_arrays_section():
     print()
     print("In this example, I can see that \"ravel\" changes the original array.")
 
+def dot_section():
+    section("9. Dot Operations")
+    array_a = np.array([[1, 2],
+                        [3, 4]])
+
+    array_b = np.array([[5, 6],
+                        [7, 8]])
+    result = array_a @ array_b
+    print(f"Matrix multiplication array_a @ array_b -> \n{result}\n")
+    print(f"Calcul:\n1x5 + 2x7 = 19\n1x6 + 2x8 = 22\n3x5 + 4x7 = 43\n3x6 + 4x8 = 50")
+
 
 def main():
     page_title("My NumPy Journal")
@@ -264,7 +275,7 @@ def main():
     stack_split_section()
     operations_section()
     flattening_arrays_section()
-
+    dot_section()
 
 if __name__ == "__main__":
     main()

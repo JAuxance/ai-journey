@@ -188,6 +188,17 @@ def manipulation_section():
     df3 = df3.fillna(0)
     print(df3)
 
+
+def df_info_section():
+    section("9. DataFrame Info")
+    poke_df = pd.read_csv("data/pokemon.csv", index_col="Name")
+    print()
+    print("poke_df.info ->")
+    poke_df.info()
+    #
+    print(f"poke_df.describe ->\n{poke_df.describe()}")
+
+
 def main():
     page_title("My Pandas Journal")
     series_section()
@@ -198,6 +209,7 @@ def main():
     operations_section()
     data_cleaning_section()
     manipulation_section()
+    df_info_section()
 
 
 if __name__ == "__main__":
