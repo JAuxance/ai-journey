@@ -198,6 +198,17 @@ def df_info_section():
     #
     print(f"poke_df.describe ->\n{poke_df.describe()}")
 
+def sort_section():
+    section("10. Sorting Data")
+
+    rng = np.random.default_rng(42)
+
+    df = pd.DataFrame(rng.integers(-40, 50, size=(5, 3)), columns=list("ABC"))
+    df1 = df.sort_values(by=list("A"), ascending=False).reset_index(drop=True)
+    print()
+    print(f"Original Array ->\n{df}\n")
+    print(f"Sorted Array with Clean Index ->\n{df1}\n")
+
 
 def main():
     page_title("My Pandas Journal")
@@ -210,7 +221,7 @@ def main():
     data_cleaning_section()
     manipulation_section()
     df_info_section()
-
+    sort_section()
 
 if __name__ == "__main__":
     main()
