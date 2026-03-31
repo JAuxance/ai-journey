@@ -153,8 +153,8 @@ def data_cleaning_section():
     df = df.drop(columns=["Legendary", "#"])
     print(f"After drop(columns=[\"Legendary\", \"#\"]) -> {list(df.columns)}")
 
-    df = df.fillna({"Type 2": "None"})
-    print(f"\nMissing Type 2 filled with \"None\" -> {df['Type 2'].isna().sum()} NaN remaining")
+    df = df.dropna(subset=["Type 2"])
+    print(f"\ndf.dropna(subset=[\"Type 2\"]) ->\n{df['Type 2']}")
 
     df["Type 1"] = df["Type 1"].replace({
         "Grass":    "Terre",
@@ -169,8 +169,10 @@ def data_cleaning_section():
 
 def manipulation_section():
     section("8. Manipulation")
+
     rng = np.random.default_rng(42)
     df = pd.DataFrame(rng.choice(30, size=5, replace=False))
+
     data = {
         "Game": ["League of Legends", "Minecraft", "CoreKeeper"],
         "Type": ["MOBA", "Sandbox", "Sandbox"],
@@ -178,25 +180,26 @@ def manipulation_section():
         "Studio": ["Riot Games", "Microsoft", "Pugstorm"],
     }
     df1 = pd.DataFrame(data, index=["League of Legends", "Minecraft", "CoreKeeper"])
-    print(f"\n{df}")
-    print(f"Use df.iloc to locate one value with thier index ->\n{df1.iloc[2]}\n")
-    print(f"Use df.loc to locate with Label ->\n{df1.loc[:, "Type"]}\n")
-    # print(df1.loc[: ,"Authors"])
-    # print(df)
-    print(df[df >= 15])
+
+    print(f"df (random values) ->\n{df}\n")
+    print(f"df.iloc[2] (by position) ->\n{df1.iloc[2]}\n")
+    print(f"df.loc[:, \"Type\"] (by label) ->\n{df1.loc[:, 'Type']}\n")
+
+    print(f"df[df >= 15] (boolean filter) ->\n{df[df >= 15]}\n")
+
     df3 = df[df % 2 == 0]
     df3 = df3.fillna(0)
-    print(df3)
+    print(f"df[df % 2 == 0].fillna(0) ->\n{df3}")
 
 
 def df_info_section():
     section("9. DataFrame Info")
+
     poke_df = pd.read_csv("data/pokemon.csv", index_col="Name")
-    print()
-    print("poke_df.info ->")
+
+    print("\npoke_df.info() ->")
     poke_df.info()
-    #
-    print(f"poke_df.describe ->\n{poke_df.describe()}")
+    print(f"\npoke_df.describe() ->\n{poke_df.describe()}")
 
 def sort_section():
     section("10. Sorting Data")
@@ -205,9 +208,13 @@ def sort_section():
 
     df = pd.DataFrame(rng.integers(-40, 50, size=(5, 3)), columns=list("ABC"))
     df1 = df.sort_values(by=list("A"), ascending=False).reset_index(drop=True)
-    print()
-    print(f"Original Array ->\n{df}\n")
-    print(f"Sorted Array with Clean Index ->\n{df1}\n")
+
+    print(f"\nOriginal DataFrame ->\n{df}\n")
+    print(f"sort_values(by=\"A\", ascending=False).reset_index(drop=True) ->\n{df1}\n")
+
+    df["A*B"] = df["A"] * df["B"]
+    print(f"df with new column A*B ->\n{df}")
+
 
 
 def main():
