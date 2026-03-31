@@ -215,7 +215,22 @@ def sort_section():
     df["A*B"] = df["A"] * df["B"]
     print(f"df with new column A*B ->\n{df}")
 
+def encoding_section():
+    section("11. Encoding Categorical Data")
 
+    data = {
+        "gender": ["male", "female", "female", "male"],
+        "lunch": ["standard", "free/reduced", "standard", "free/reduced"],
+        "score": [72, 85, 90, 68]
+    }
+
+    df = pd.DataFrame(data)
+
+    df_encoded = pd.get_dummies(df, columns=["gender", "lunch"])
+
+    print(f"original DataFrame ->\n{df}")
+    print(f"df_encoded DataFrame ->\n{df_encoded}")
+    print(f"df_encoded.dtypes() ->\n{df_encoded.dtypes}")
 
 def main():
     page_title("My Pandas Journal")
@@ -229,6 +244,8 @@ def main():
     manipulation_section()
     df_info_section()
     sort_section()
+    encoding_section()
+
 
 if __name__ == "__main__":
     main()
