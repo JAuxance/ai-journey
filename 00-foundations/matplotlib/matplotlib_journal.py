@@ -141,7 +141,7 @@ def figure_and_axes_section():
     axes[1, 2].plot(x, x**7, color="purple")
     axes[1, 2].set_title("Sixth Axes")
     plt.tight_layout()
-    # plt.savefig("figures/figure_and_axes.png")
+    #  plt.savefig("figures/figure_and_axes.png")
     print("→ figures/figure_and_axes.png")
     plt.show()
 def csv_chart_section():
@@ -161,6 +161,23 @@ def csv_chart_section():
     print("→ figures/csv_chart.png")
     plt.show()
 
+def heatmap_section():
+    section("8. Heatmap Chart")
+
+    df = pd.read_csv("data/pokemon.csv", index_col="Name")
+    df_clean = df.drop(columns=["#", "Total", "Generation", "Legendary"])
+    corr = df_clean.corr(numeric_only=True)
+
+    plt.figure(figsize=(7, 5))
+    plt.imshow(corr, cmap="coolwarm", vmin=-1, vmax=1)
+    plt.colorbar()
+    plt.xticks(range(len(corr)), corr.columns, rotation=45, ha="right")
+    plt.yticks(range(len(corr)), corr.columns)
+    plt.title("Heatmap corrélation stats Pokémon")
+    plt.tight_layout()
+    # plt.savefig("figures/heatmap_chart.png")
+    plt.show()
+
 def main():
     page_title("My Matplotlib Journal")
     line_chart_section()
@@ -170,5 +187,6 @@ def main():
     histogram_section()
     figure_and_axes_section()
     csv_chart_section()
+    heatmap_section()
 if __name__ == "__main__":
     main()
