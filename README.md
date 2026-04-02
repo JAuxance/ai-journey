@@ -26,7 +26,7 @@ Build strong foundations in:
 
 ## First milestones
 - [x] Build the repository structure
-- [ ] Complete NumPy / pandas / matplotlib basics
+- [x] Complete NumPy / pandas / matplotlib basics
 - [ ] Finish first ML project: Student Performance Predictor
 - [ ] Write clear project documentation
 - [x] Start weekly learning log
