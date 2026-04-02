@@ -107,7 +107,7 @@ def custom_index_section():
 def read_csv_json_section():
     section("5. Reading CSV And JSON")
 
-    df_csv = pd.read_csv("data/pokemon.csv", index_col="Name")
+    df_csv = pd.read_csv("../matplotlib/data/pokemon.csv", index_col="Name")
     df_json = pd.read_json("data/pokemon.json")
 
     show_df("pd.read_csv(pokemon.csv)", df_csv)
@@ -124,7 +124,7 @@ def read_csv_json_section():
 def operations_section():
     section("6. Operations And GroupBy")
 
-    df = pd.read_csv("data/pokemon.csv", index_col="Name")
+    df = pd.read_csv("../matplotlib/data/pokemon.csv", index_col="Name")
 
     print(f"df.mean(numeric_only=True) ->\n{df.mean(numeric_only=True)}")
     print(f"\ndf.sum(numeric_only=True) ->\n{df.sum(numeric_only=True)}")
@@ -148,7 +148,7 @@ def operations_section():
 def data_cleaning_section():
     section("7. Data Cleaning")
 
-    df = pd.read_csv("data/pokemon.csv", index_col="Name")
+    df = pd.read_csv("../matplotlib/data/pokemon.csv", index_col="Name")
 
     df = df.drop(columns=["Legendary", "#"])
     print(f"After drop(columns=[\"Legendary\", \"#\"]) -> {list(df.columns)}")
@@ -195,7 +195,7 @@ def manipulation_section():
 def df_info_section():
     section("9. DataFrame Info")
 
-    poke_df = pd.read_csv("data/pokemon.csv", index_col="Name")
+    poke_df = pd.read_csv("../matplotlib/data/pokemon.csv", index_col="Name")
 
     print("\npoke_df.info() ->")
     poke_df.info()
