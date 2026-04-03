@@ -25,7 +25,6 @@ Desktop.ini
 
 # Data/model artifacts
 *.csv
-*.pkl
 *.joblib
 *.parquet
 *.npy
