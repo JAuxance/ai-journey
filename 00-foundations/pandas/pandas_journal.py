@@ -108,7 +108,7 @@ def read_csv_json_section():
     section("5. Reading CSV And JSON")
 
     df_csv = pd.read_csv("../matplotlib/data/pokemon.csv", index_col="Name")
-    df_json = pd.read_json("data/pokemon.json")
+    df_json = pd.read_json("../../02-machine-learning/data/pokemon.json")
 
     show_df("pd.read_csv(pokemon.csv)", df_csv)
     print()
