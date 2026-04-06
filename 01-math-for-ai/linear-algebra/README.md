@@ -117,6 +117,7 @@ $$
 
 The outer product builds a matrix where each entry is the product of one component of $x$ and one component of $y$.
 Each row is a scaled version of $y^T$.
+
 ---
 
 ### Example
@@ -148,16 +149,13 @@ xy^T =
 53 & 28 & 76
 \end{bmatrix}
 $$
+
 $$
-=
 \begin{bmatrix}
 20 \cdot 53 & 20 \cdot 28 & 20 \cdot 76 \\
 32 \cdot 53 & 32 \cdot 28 & 32 \cdot 76 \\
 23 \cdot 53 & 23 \cdot 28 & 23 \cdot 76
-\end{bmatrix}
-$$
-$$
-=
+\end{bmatrix}=
 \begin{bmatrix}
 1060 & 560 & 1520 \\
 1696 & 896 & 2432 \\
