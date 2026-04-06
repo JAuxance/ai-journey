@@ -1,6 +1,6 @@
 # Linear Algebra
 
-<i>I study fundamental math concepts (based on Stanford materials) to build a solid understanding of AI.</i>
+<i>I study fundamental math concepts <a href="cs229.stanford.edu/section/cs229-linalg.pdf">(based on Stanford materials)</a> to build a solid understanding of AI.</i>
 
 ---
 
