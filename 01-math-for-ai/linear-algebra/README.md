@@ -97,3 +97,70 @@ $$
 = 1 + 6 + 16 - 25
 = -2
 $$
+
+## Outer Product
+
+### Definition
+
+Given $x \in \mathbb{R}^m$ and $y \in \mathbb{R}^n$, the outer product is defined as:
+
+$$
+xy^T \in \mathbb{R}^{m \times n}
+$$
+
+with entries:
+
+$$
+(xy^T)_{ij} = x_i y_j
+$$
+### Intuition
+
+The outer product builds a matrix where each entry is the product of one component of $x$ and one component of $y$.
+Each row is a scaled version of $y^T$.
+---
+
+### Example
+
+$$
+x =
+\begin{bmatrix}
+20 \\
+32 \\
+23
+\end{bmatrix},
+\quad
+y =
+\begin{bmatrix}
+53 \\
+28 \\
+76
+\end{bmatrix}
+$$
+
+$$
+xy^T =
+\begin{bmatrix}
+20 \\
+32 \\
+23
+\end{bmatrix}
+\begin{bmatrix}
+53 & 28 & 76
+\end{bmatrix}
+$$
+$$
+=
+\begin{bmatrix}
+20 \cdot 53 & 20 \cdot 28 & 20 \cdot 76 \\
+32 \cdot 53 & 32 \cdot 28 & 32 \cdot 76 \\
+23 \cdot 53 & 23 \cdot 28 & 23 \cdot 76
+\end{bmatrix}
+$$
+$$
+=
+\begin{bmatrix}
+1060 & 560 & 1520 \\
+1696 & 896 & 2432 \\
+1219 & 644 & 1748
+\end{bmatrix}
+$$
