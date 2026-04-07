@@ -1,0 +1,36 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Python artifacts
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.egg-info
+.eggs
+dist
+build
+
+# Virtual environments
+.venv
+venv
+env
+.env
+
+# Test / lint caches
+.pytest_cache
+.coverage
+.ruff_cache
+
+# Jupyter checkpoints
+.ipynb_checkpoints
+
+# Generated figures (rebuilt at runtime)
+00-foundations/matplotlib/figures/
+
+# Editor / OS
+.vscode
+.idea
+*.DS_Store
