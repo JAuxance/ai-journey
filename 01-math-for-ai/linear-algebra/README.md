@@ -46,6 +46,8 @@ $$
 
 ### Intuition
 
+---
+
 The dot product measures similarity between two vectors:
 
 - positive → same direction  
@@ -100,6 +102,7 @@ $$
 
 ## Outer Product
 
+
 ### Definition
 
 Given $x \in \mathbb{R}^m$ and $y \in \mathbb{R}^n$, the outer product is defined as:
@@ -114,6 +117,8 @@ $$
 (xy^T)_{ij} = x_i y_j
 $$
 ### Intuition
+
+---
 
 The outer product builds a matrix where each entry is the product of one component of $x$ and one component of $y$.
 Each row is a scaled version of $y^T$.
@@ -163,6 +168,9 @@ $$
 \end{bmatrix}
 $$
 ## Matrix-Vector Products
+
+---
+
 ### Definition
 
 Given a matrix $A$ $\in\mathbb{R}^{m\times n}$ and a vector $x$ $\in\mathbb{R}^n$, thier poduct is a vector $y= Ax \in^m$.
@@ -178,16 +186,20 @@ a^T_2x\\
 \vdots\\
 a^T_mx\end{bmatrix}
 $$
----
 
+---
 ### Example
 
-$$A = \begin{bmatrix}1 & 2 & 4\\ 2 & 3 & 5\\ 3 & 10 & 8\end{bmatrix}, \quad
-x = \begin{bmatrix}3 \\ 4 \\ 4\end{bmatrix}$$
+$$ A = \begin{bmatrix}1 & 2 & 4\\ 2 & 3 & 5\\ 3 & 10 & 8\end{bmatrix}, \quad
+x = \begin{bmatrix}3 \\ 4 \\ 4\end{bmatrix} $$
+
 
 $$y = Ax = \begin{bmatrix}27 \\ 38 \\ 81\end{bmatrix}$$
+
 ---
 ### Calculation
 $$A_{1,:} \cdot x = 1\cdot 3 + 2\cdot 4 + 4\cdot 4 = 27$$
 $$A_{2,:} \cdot x = 2\cdot 3 + 3\cdot 4 + 5\cdot 4 = 38$$
 $$A_{3,:} \cdot x = 3\cdot 3 + 10\cdot 4 + 8\cdot 4 = 81$$
+
+---
