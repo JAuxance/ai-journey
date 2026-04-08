@@ -173,33 +173,73 @@ $$
 
 ### Definition
 
-Given a matrix $A$ $\in\mathbb{R}^{m\times n}$ and a vector $x$ $\in\mathbb{R}^n$, thier poduct is a vector $y= Ax \in^m$.
+Given a matrix $A \in \mathbb{R}^{m \times n}$ and a vector $x \in \mathbb{R}^n$, their product is a vector $y = Ax \in \mathbb{R}^m$.
 
-$$y = Ax = \begin{bmatrix}— & a^T_1&— \\
-— & a^T_2 &— \\
-& \vdots\\
-— &a^T_m &—
-\end{bmatrix}
-x =
-\begin{bmatrix}a^T_1x\\
-a^T_2x\\
-\vdots\\
-a^T_mx\end{bmatrix}
 $$
+y = Ax =
+\begin{bmatrix}
+a_1^T \\
+a_2^T \\
+\vdots \\
+a_m^T
+\end{bmatrix}
+x
+=
+\begin{bmatrix}
+a_1^T x \\
+a_2^T x \\
+\vdots \\
+a_m^T x
+\end{bmatrix}
+$$
+
+### Intuition
+
+---
+
+The matrix-vector product transforms a vector into another vector.
+Each entry of the result is the dot product between one row of the matrix and the vector.
 
 ---
 ### Example
 
-$$ A = \begin{bmatrix}1 & 2 & 4\\ 2 & 3 & 5\\ 3 & 10 & 8\end{bmatrix}, \quad
-x = \begin{bmatrix}3 \\ 4 \\ 4\end{bmatrix} $$
+$$
+A =
+\begin{bmatrix}
+1 & 2 & 4 \\
+2 & 3 & 5 \\
+3 & 10 & 8
+\end{bmatrix},
+\quad
+x =
+\begin{bmatrix}
+3 \\
+4 \\
+4
+\end{bmatrix}
+$$
 
 
-$$y = Ax = \begin{bmatrix}27 \\ 38 \\ 81\end{bmatrix}$$
+$$
+y = Ax =
+\begin{bmatrix}
+27 \\
+38 \\
+81
+\end{bmatrix}
+$$
 
 ---
+
 ### Calculation
-$$A_{1,:} \cdot x = 1\cdot 3 + 2\cdot 4 + 4\cdot 4 = 27$$
-$$A_{2,:} \cdot x = 2\cdot 3 + 3\cdot 4 + 5\cdot 4 = 38$$
-$$A_{3,:} \cdot x = 3\cdot 3 + 10\cdot 4 + 8\cdot 4 = 81$$
+$$
+a_1^T x = 1 \cdot 3 + 2 \cdot 4 + 4 \cdot 4 = 27
+$$
+$$
+a_2^T x = 2 \cdot 3 + 3 \cdot 4 + 5 \cdot 4 = 38
+$$
+$$
+a_3^T x = 3 \cdot 3 + 10 \cdot 4 + 8 \cdot 4 = 81
+$$
 
 ---
