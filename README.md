@@ -24,11 +24,24 @@ Build strong foundations in:
 - `05-notes/` -> study notes and reading notes
 - `06-interview-prep/` -> revision and technical drills
 
+## Current focus
+
+> **Day 31 Focus -> Math for IA**
+
+```
+Linear Algebra ██░░░░░░░░ 20%
+```
+
+- Working through: `01-math-for-ai/linear-algebra/`
+- Next up: derivatives, gradients, chain rule
+
+---
+
 ## First milestones
 - [x] Build the repository structure
 - [x] Complete NumPy / pandas / matplotlib basics
-- [ ] Finish first ML project: Student Performance Predictor
-- [ ] Write clear project documentation
+- [x] Finish first ML project: Student Performance Predictor
+- [x] Write clear project documentation
 - [x] Start weekly learning log
 
 ## Progress log
