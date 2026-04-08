@@ -163,3 +163,31 @@ $$
 \end{bmatrix}
 $$
 ## Matrix-Vector Products
+### Definition
+
+Given a matrix $A$ $\in\mathbb{R}^{m\times n}$ and a vector $x$ $\in\mathbb{R}^n$, thier poduct is a vector $y= Ax \in^m$.
+
+$$y = Ax = \begin{bmatrix}— & a^T_1&— \\
+— & a^T_2 &— \\
+& \vdots\\
+— &a^T_m &—
+\end{bmatrix}
+x =
+\begin{bmatrix}a^T_1x\\
+a^T_2x\\
+\vdots\\
+a^T_mx\end{bmatrix}
+$$
+---
+
+### Example
+
+$$A = \begin{bmatrix}1 & 2 & 4\\ 2 & 3 & 5\\ 3 & 10 & 8\end{bmatrix}, \quad
+x = \begin{bmatrix}3 \\ 4 \\ 4\end{bmatrix}$$
+
+$$y = Ax = \begin{bmatrix}27 \\ 38 \\ 81\end{bmatrix}$$
+---
+### Calculation
+$$A_{1,:} \cdot x = 1\cdot 3 + 2\cdot 4 + 4\cdot 4 = 27$$
+$$A_{2,:} \cdot x = 2\cdot 3 + 3\cdot 4 + 5\cdot 4 = 38$$
+$$A_{3,:} \cdot x = 3\cdot 3 + 10\cdot 4 + 8\cdot 4 = 81$$
