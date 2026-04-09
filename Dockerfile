@@ -1,34 +1,34 @@
 FROM python:3.11-slim
 
-# Avoid interactive prompts during apt installs
-ENV DEBIAN_FRONTEND=noninteractive
-# Prevent Python from buffering stdout/stderr
-ENV PYTHONUNBUFFERED=1
-# Expose project root to Python imports
-ENV PYTHONPATH=/workspace
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONPATH=/workspace \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_ROOT_USER_ACTION=ignore
 
 WORKDIR /workspace
 
-# Build tools needed by some Python packages (e.g. numpy wheels)
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
+    tini \
     && rm -rf /var/lib/apt/lists/*
 
-# Install dependencies first for better layer caching
 COPY requirements.txt .
-RUN pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir -r requirements.txt jupyterlab
+RUN pip install --upgrade pip \
+    && pip install -r requirements.txt jupyterlab
 
-# Copy the full project
 COPY . .
 
 EXPOSE 8888
 
-# Default: start JupyterLab (no token/password for local dev)
+ENTRYPOINT ["tini", "--"]
+
 CMD ["jupyter", "lab", \
      "--ip=0.0.0.0", \
      "--port=8888", \
      "--no-browser", \
      "--allow-root", \
-     "--NotebookApp.token=", \
-     "--NotebookApp.password="]
+     "--ServerApp.token=", \
+     "--ServerApp.password=", \
+     "--ServerApp.allow_origin=*"]

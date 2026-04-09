@@ -1,22 +1,38 @@
 services:
-  # ── JupyterLab (dev default) ──────────────────────────────────────────────
   jupyter:
     build: .
     container_name: ai-journey
+    working_dir: /workspace
     ports:
       - "8888:8888"
     volumes:
-      # Live-mount the repo so file edits are reflected instantly
       - .:/workspace
+    environment:
+      PYTHONPATH: /workspace
+    tty: true
+    stdin_open: true
     restart: unless-stopped
 
-  # ── Student performance pipeline (run on demand) ──────────────────────────
   pipeline:
     build: .
     container_name: ai-journey-pipeline
     volumes:
       - .:/workspace
     working_dir: /workspace/04-projects/01-student-performance-predictor
+    environment:
+      PYTHONPATH: /workspace
     command: python src/main.py
     profiles:
       - pipeline
+
+  tests:
+    build: .
+    container_name: ai-journey-tests
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    environment:
+      PYTHONPATH: /workspace
+    command: pytest
+    profiles:
+      - test
