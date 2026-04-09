@@ -245,3 +245,65 @@ $$
 ---
 ## Matrix-Matrix Products
 ## Definition
+The product of two matrices is obtained by taking the dot product of each row of the first matrix with each column of the second matrix.
+$$
+C = AB=\begin{bmatrix}
+— & a^T_1 & — \\
+— & a^T_2 & — \\
+& \vdots \\
+— & a^T_m & — 
+\end{bmatrix}
+\begin{bmatrix}
+| & | & &|\\
+b_1 & b_2 &\dots & b_p \\
+| & | & &|
+\end{bmatrix}
+=
+\begin{bmatrix}
+a_1^T b_1 & a_1^T b_2 & \cdots & a_1^T b_p \\
+a_2^T b_1 & a_2^T b_2 & \cdots & a_2^T b_p \\
+\vdots & \vdots & \ddots & \vdots \\
+a_m^T b_1 & a_m^T b_2 & \cdots & a_m^T b_p
+\end{bmatrix}.
+$$
+## Intiution
+Each entry of the product matrix tells us how much a row of the first matrix aligns with a column of the second matrix.
+So matrix multiplication combines rows and columns to produce new values that summarize their interactions.
+
+---
+## Example
+$$
+A =
+\begin{bmatrix}
+1 & 2 \\
+3 & 4
+\end{bmatrix},
+\qquad
+B =
+\begin{bmatrix}
+5 & 6 \\
+7 & 8
+\end{bmatrix}
+$$
+
+$$
+AB =
+\begin{bmatrix}
+1 & 2 \\
+3 & 4
+\end{bmatrix}
+\begin{bmatrix}
+5 & 6 \\
+7 & 8
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 \cdot 5 + 2 \cdot 7 & 1 \cdot 6 + 2 \cdot 8 \\
+3 \cdot 5 + 4 \cdot 7 & 3 \cdot 6 + 4 \cdot 8
+\end{bmatrix}
+=
+\begin{bmatrix}
+19 & 22 \\
+43 & 50
+\end{bmatrix}.
+$$
