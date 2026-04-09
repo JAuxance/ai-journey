@@ -243,3 +243,5 @@ a_3^T x = 3 \cdot 3 + 10 \cdot 4 + 8 \cdot 4 = 81
 $$
 
 ---
+## Matrix-Matrix Products
+## Definition
