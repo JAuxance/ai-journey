@@ -34,3 +34,5 @@ env
 .vscode
 .idea
 *.DS_Store
+.Trash-*
+.codex

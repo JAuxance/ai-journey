@@ -1,12 +1,14 @@
 services:
   jupyter:
-    build: .
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
     container_name: ai-journey
     working_dir: /workspace
     ports:
       - "8888:8888"
     volumes:
-      - .:/workspace
+      - ..:/workspace
     environment:
       PYTHONPATH: /workspace
     tty: true
@@ -14,10 +16,12 @@ services:
     restart: unless-stopped
 
   pipeline:
-    build: .
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
     container_name: ai-journey-pipeline
     volumes:
-      - .:/workspace
+      - ..:/workspace
     working_dir: /workspace/04-projects/01-student-performance-predictor
     environment:
       PYTHONPATH: /workspace
@@ -26,10 +30,12 @@ services:
       - pipeline
 
   tests:
-    build: .
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
     container_name: ai-journey-tests
     volumes:
-      - .:/workspace
+      - ..:/workspace
     working_dir: /workspace
     environment:
       PYTHONPATH: /workspace
