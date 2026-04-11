@@ -63,3 +63,4 @@ pip-wheel-metadata/
 !.vscode/tasks.json
 01-math-for-ai/linear-algebra/Stanford_cs229-linalg_comm.pdf
 01-math-for-ai/linear-algebra/SYNTHESE.md
+CLAUDE.md
