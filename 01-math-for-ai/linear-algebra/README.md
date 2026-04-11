@@ -334,3 +334,71 @@ a^1 & a^2 &\cdots &a^n \\
 = \sum^n_{i =1} a_ib_i^T .
 $$
 ---
+## Matrix-Matrix as Matrix-Vector products
+
+Each column of C is A multiplied by the corresponding column of B:
+
+$$
+C = AB = \begin{bmatrix} | & | & & | \\ Ab_1 & Ab_2 & \cdots & Ab_p \\ | & | & & | \end{bmatrix}.
+$$
+
+So computing AB = applying A to each column of B.
+
+---
+
+## The Identity Matrix and Diagonal Matrices
+## Identity Matrix
+
+The identity matrix $I \in \mathbb{R}^{n \times n}$ has 1s on the diagonal and 0s everywhere else:
+
+$$
+I_{ij} = \begin{cases} 1 & i = j \\ 0 & i \neq j \end{cases}
+$$
+
+It is the "1" of matrix multiplication:
+
+$$AI = A = IA$$
+
+In numpy: `np.eye(n)`
+
+---
+
+## Diagonal Matrix
+
+A diagonal matrix $D = \text{diag}(d_1, d_2, \dots, d_n)$ has non-zero values only on the diagonal:
+
+$$
+D_{ij} = \begin{cases} d_i & i = j \\ 0 & i \neq j \end{cases}
+$$
+
+Note: $I = \text{diag}(1, 1, \dots, 1)$
+
+In numpy: `np.diag([d1, d2, ..., dn])`
+
+## Transpose
+
+Flips rows and columns of a matrix. If $A \in \mathbb{R}^{m \times n}$, then $A^T \in \mathbb{R}^{n \times m}$:
+
+$$
+(A^T)_{ij} = A_{ji}
+$$
+
+In numpy: `A.T`
+
+### Properties
+
+- $(A^T)^T = A$ → double transpose = back to original
+- $(AB)^T = B^T A^T$ → **order reverses**
+- $(A + B)^T = A^T + B^T$ → distributes over addition
+
+### Key rule
+
+Two equivalent ways to transpose a product:
+
+$$
+(AB)^T = B^T A^T
+$$
+
+```python
+(B @ C).T == C.T @ B.T  # True
+```
