@@ -1,6 +1,19 @@
 # Linear Algebra
 
-<i>I study fundamental math concepts <a href="cs229.stanford.edu/section/cs229-linalg.pdf">(based on Stanford materials)</a> to build a solid understanding of AI.</i>
+*Based on [Stanford CS229 materials](https://cs229.stanford.edu/section/cs229-linalg.pdf) — studying fundamental math concepts to build a solid understanding of AI.*
+
+---
+
+## Table of Contents
+
+1. [Basic Matrix Notation](#basic-matrix-notation)
+2. [Vector Notation](#vector-notation)
+3. [Dot Product](#dot-product)
+4. [Outer Product](#outer-product)
+5. [Matrix-Vector Products](#matrix-vector-products)
+6. [Matrix-Matrix Products](#matrix-matrix-products)
+7. [Identity Matrix and Diagonal Matrices](#the-identity-matrix-and-diagonal-matrices)
+8. [Transpose](#transpose)
 
 ---
 
@@ -8,9 +21,9 @@
 
 Let $A \in \mathbb{R}^{m \times n}$.
 
-- $m$ = number of rows  
-- $n$ = number of columns  
-- The entries of $A$ are real numbers  
+- $m$ = number of rows
+- $n$ = number of columns
+- The entries of $A$ are real numbers
 
 ---
 
@@ -42,19 +55,13 @@ $$
 x^T y = \sum_{i=1}^{n} x_i y_i.
 $$
 
----
-
 ### Intuition
-
----
 
 The dot product measures similarity between two vectors:
 
-- positive → same direction  
-- zero → orthogonal  
-- negative → opposite direction  
-
----
+- positive → same direction
+- zero → orthogonal
+- negative → opposite direction
 
 ### Example
 
@@ -90,8 +97,6 @@ x^T y =
 = -2.
 $$
 
----
-
 ### Calculation
 
 $$
@@ -100,8 +105,9 @@ $$
 = -2
 $$
 
-## Outer Product
+---
 
+## Outer Product
 
 ### Definition
 
@@ -116,14 +122,11 @@ with entries:
 $$
 (xy^T)_{ij} = x_i y_j.
 $$
-### Intuition
 
----
+### Intuition
 
 The outer product builds a matrix where each entry is the product of one component of $x$ and one component of $y$.
 Each row is a scaled version of $y^T$.
-
----
 
 ### Example
 
@@ -153,23 +156,23 @@ xy^T =
 \begin{bmatrix}
 53 & 28 & 76
 \end{bmatrix}
-$$
-
-$$
+=
 \begin{bmatrix}
 20 \cdot 53 & 20 \cdot 28 & 20 \cdot 76 \\
 32 \cdot 53 & 32 \cdot 28 & 32 \cdot 76 \\
 23 \cdot 53 & 23 \cdot 28 & 23 \cdot 76
-\end{bmatrix}=
+\end{bmatrix}
+=
 \begin{bmatrix}
 1060 & 560 & 1520 \\
 1696 & 896 & 2432 \\
 1219 & 644 & 1748
 \end{bmatrix}.
 $$
-## Matrix-Vector Products
 
 ---
+
+## Matrix-Vector Products
 
 ### Definition
 
@@ -195,12 +198,9 @@ $$
 
 ### Intuition
 
----
-
 The matrix-vector product transforms a vector into another vector.
 Each entry of the result is the dot product between one row of the matrix and the vector.
 
----
 ### Example
 
 $$
@@ -219,7 +219,6 @@ x =
 \end{bmatrix}
 $$
 
-
 $$
 y = Ax =
 \begin{bmatrix}
@@ -229,29 +228,34 @@ y = Ax =
 \end{bmatrix}.
 $$
 
----
-
 ### Calculation
+
 $$
 a_1^T x = 1 \cdot 3 + 2 \cdot 4 + 4 \cdot 4 = 27
 $$
+
 $$
 a_2^T x = 2 \cdot 3 + 3 \cdot 4 + 5 \cdot 4 = 38
 $$
+
 $$
 a_3^T x = 3 \cdot 3 + 10 \cdot 4 + 8 \cdot 4 = 81
 $$
 
 ---
+
 ## Matrix-Matrix Products
-## Definition
+
+### Definition
+
 The product of two matrices is obtained by taking the dot product of each row of the first matrix with each column of the second matrix.
+
 $$
 C = AB=\begin{bmatrix}
 — & a^T_1 & — \\
 — & a^T_2 & — \\
 & \vdots \\
-— & a^T_m & — 
+— & a^T_m & —
 \end{bmatrix}
 \begin{bmatrix}
 | & | & &|\\
@@ -266,12 +270,14 @@ a_2^T b_1 & a_2^T b_2 & \cdots & a_2^T b_p \\
 a_m^T b_1 & a_m^T b_2 & \cdots & a_m^T b_p
 \end{bmatrix}.
 $$
-## Intiution
+
+### Intuition
+
 Each entry of the product matrix tells us how much a row of the first matrix aligns with a column of the second matrix.
 So matrix multiplication combines rows and columns to produce new values that summarize their interactions.
 
----
-## Example 
+### Example
+
 $$
 A =
 \begin{bmatrix}
@@ -307,21 +313,21 @@ AB =
 43 & 50
 \end{bmatrix}.
 $$
-## Column and Row views
 
-In the outer product formulation C = AB:
+### Column and Row Views
+
+In the outer product formulation $C = AB$:
 
 - $a_i$ → i-th **column** of $A$
 - $b_i^T$ → i-th **row** of $B$ (= i-th column of $B$, transposed)
 
 Same data, different orientation.
 
----
-## Iterpretation
+### Interpretation
 
-$$C = AB = 
+$$C = AB =
 \begin{bmatrix}
-\mid &\mid&  \ &\mid\\ 
+\mid &\mid&  \ &\mid\\
 a^1 & a^2 &\cdots &a^n \\
 \mid & \mid & &\mid
 \end{bmatrix}
@@ -333,21 +339,22 @@ a^1 & a^2 &\cdots &a^n \\
 \end{bmatrix}
 = \sum^n_{i =1} a_ib_i^T .
 $$
----
-## Matrix-Matrix as Matrix-Vector products
 
-Each column of C is A multiplied by the corresponding column of B:
+### Matrix-Matrix as Matrix-Vector Products
+
+Each column of $C$ is $A$ multiplied by the corresponding column of $B$:
 
 $$
 C = AB = \begin{bmatrix} | & | & & | \\ Ab_1 & Ab_2 & \cdots & Ab_p \\ | & | & & | \end{bmatrix}.
 $$
 
-So computing AB = applying A to each column of B.
+So computing $AB$ = applying $A$ to each column of $B$.
 
 ---
 
 ## The Identity Matrix and Diagonal Matrices
-## Identity Matrix
+
+### Identity Matrix
 
 The identity matrix $I \in \mathbb{R}^{n \times n}$ has 1s on the diagonal and 0s everywhere else:
 
@@ -361,9 +368,7 @@ $$AI = A = IA$$
 
 In numpy: `np.eye(n)`
 
----
-
-## Diagonal Matrix
+### Diagonal Matrix
 
 A diagonal matrix $D = \text{diag}(d_1, d_2, \dots, d_n)$ has non-zero values only on the diagonal:
 
@@ -374,6 +379,8 @@ $$
 Note: $I = \text{diag}(1, 1, \dots, 1)$
 
 In numpy: `np.diag([d1, d2, ..., dn])`
+
+---
 
 ## Transpose
 
@@ -391,7 +398,7 @@ In numpy: `A.T`
 - $(AB)^T = B^T A^T$ → **order reverses**
 - $(A + B)^T = A^T + B^T$ → distributes over addition
 
-### Key rule
+### Key Rule
 
 Two equivalent ways to transpose a product:
 
