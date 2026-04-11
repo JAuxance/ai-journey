@@ -27,7 +27,7 @@ x_1 \\
 x_2 \\
 \vdots \\
 x_n
-\end{bmatrix}
+\end{bmatrix}.
 $$
 
 ---
@@ -39,7 +39,7 @@ $$
 Given $x, y \in \mathbb{R}^n$, the dot product is defined as:
 
 $$
-x^T y = \sum_{i=1}^{n} x_i y_i
+x^T y = \sum_{i=1}^{n} x_i y_i.
 $$
 
 ---
@@ -87,7 +87,7 @@ x^T y =
 4 \\
 -5
 \end{bmatrix}
-= -2
+= -2.
 $$
 
 ---
@@ -114,7 +114,7 @@ $$
 with entries:
 
 $$
-(xy^T)_{ij} = x_i y_j
+(xy^T)_{ij} = x_i y_j.
 $$
 ### Intuition
 
@@ -165,7 +165,7 @@ $$
 1060 & 560 & 1520 \\
 1696 & 896 & 2432 \\
 1219 & 644 & 1748
-\end{bmatrix}
+\end{bmatrix}.
 $$
 ## Matrix-Vector Products
 
@@ -190,7 +190,7 @@ a_1^T x \\
 a_2^T x \\
 \vdots \\
 a_m^T x
-\end{bmatrix}
+\end{bmatrix}.
 $$
 
 ### Intuition
@@ -226,7 +226,7 @@ y = Ax =
 27 \\
 38 \\
 81
-\end{bmatrix}
+\end{bmatrix}.
 $$
 
 ---
@@ -271,7 +271,7 @@ Each entry of the product matrix tells us how much a row of the first matrix ali
 So matrix multiplication combines rows and columns to produce new values that summarize their interactions.
 
 ---
-## Example
+## Example 
 $$
 A =
 \begin{bmatrix}
@@ -307,3 +307,30 @@ AB =
 43 & 50
 \end{bmatrix}.
 $$
+## Column and Row views
+
+In the outer product formulation C = AB:
+
+- $a_i$ → i-th **column** of $A$
+- $b_i^T$ → i-th **row** of $B$ (= i-th column of $B$, transposed)
+
+Same data, different orientation.
+
+---
+## Iterpretation
+
+$$C = AB = 
+\begin{bmatrix}
+\mid &\mid&  \ &\mid\\ 
+a^1 & a^2 &\cdots &a^n \\
+\mid & \mid & &\mid
+\end{bmatrix}
+\begin{bmatrix}
+— & b^T_1& — \\
+— &b^T_1& —\\
+&\vdots \\
+— & b^T_n& —
+\end{bmatrix}
+= \sum^n_{i =1} a_ib_i^T .
+$$
+---
