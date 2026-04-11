@@ -37,12 +37,17 @@ Linear Algebra ███░░░░░░░ 30%
 
 ---
 
-## First milestones
-- [x] Build the repository structure
-- [x] Complete NumPy / pandas / matplotlib basics
-- [x] Finish first ML project: Student Performance Predictor
-- [x] Write clear project documentation
-- [x] Start weekly learning log
+## First milestones [x]
+- [x] Repository structure set up
+- [x] NumPy / pandas / matplotlib basics
+- [x] First ML project: Student Performance Predictor
+- [x] Project documentation written
+- [x] Weekly learning log started
+
+## Math for AI milestones [ ]
+- [ ] Complete linear algebra foundations
+- [ ] Complete calculus and optimization foundations
+- [ ] Complete probability and statistics foundations
 
 ## Progress log
 | Month | Focus | Status |
