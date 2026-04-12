@@ -26,7 +26,7 @@ Build strong foundations in:
 
 ## Current focus
 
-> **Day 34 Focus -> Math for IA**
+> **Day 35 Focus -> Math for IA**
 
 ```
 Linear Algebra ███░░░░░░░ 30%
