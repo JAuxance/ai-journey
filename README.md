@@ -26,10 +26,10 @@ Build strong foundations in:
 
 ## Current focus
 
-> **Day 37 Focus -> Math for IA**
+> **Day 38 Focus -> Math for IA**
 
 ```
-Linear Algebra ███░░░░░░░ 30%
+Linear Algebra ████░░░░ 55%
 ```
 
 - Working through: `01-math-for-ai/linear-algebra/`
